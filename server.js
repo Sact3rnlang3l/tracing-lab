@@ -19,6 +19,7 @@ try {
   nonExistentFunction()
 } catch (error) {
   rollbar.error('Function does not exist')
+  
 }
 
 app.get('/api/button', ()=>{
