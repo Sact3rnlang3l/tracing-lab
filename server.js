@@ -9,12 +9,19 @@ let rollbar = new Rollbar({
 })
 
 const app = express()
-app.get('/', (req,res)=>{
-    res.sendFile(path.join(__dirname, "/client/index.html"))
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/index.html"))
   rollbar.info(
     "html file served like a good steak entree at an upscale restraunt"
   )
 })
+try {
+  nonExistentFunction()
+} catch (error) {
+  console.error(error)
+}
+
+app.use(rollbar.errorHandler())
 
 app.listen(4040, () => console.log("Loud and Clear on 4040"))
 
