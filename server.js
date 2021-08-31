@@ -19,12 +19,11 @@ try {
   nonExistentFunction()
 } catch (error) {
   rollbar.error('Function does not exist')
-
 }
 
 app.post('/api/button', ()=>{
     rollbar.warning('First Chance to Stop')
-    // return 'Stop it'
+    return 'Stop it'
     rollbar.critical('Stop it')
 })
 

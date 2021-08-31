@@ -19,7 +19,7 @@
         function do_not_press(e){
             e.preventDefault()
             axios.post('/api/button', buuton).then(res =>{
-
+                console.log(res)
             })
         }
         buuton.addEventListener('click', do_not_press)
