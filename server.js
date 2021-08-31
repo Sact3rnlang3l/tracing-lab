@@ -23,9 +23,11 @@ try {
 }
 
 app.post('/api/button', ()=>{
-    rollbar.critical('Stop it')
+    rollbar.warning('First Chance to Stop')
     return 'Stop it'
 })
+
+
 
 app.use(rollbar.errorHandler())
 
