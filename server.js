@@ -21,7 +21,7 @@ try {
   rollbar.error('Function does not exist')
 }
 
-app.post('/api/button', ()=>{
+app.get('/api/button', ()=>{
     rollbar.critical('Stop it')
     return 'Stop it'
 })
