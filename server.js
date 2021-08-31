@@ -19,10 +19,10 @@ try {
   nonExistentFunction()
 } catch (error) {
   rollbar.error('Function does not exist')
-  
+
 }
 
-app.get('/api/button', ()=>{
+app.post('/api/button', ()=>{
     rollbar.critical('Stop it')
     return 'Stop it'
 })
