@@ -23,8 +23,9 @@ try {
 
 app.post('/api/button', ()=>{
     rollbar.warning('First Chance to Stop')
-    return 'Stop it'
+    
     rollbar.critical('Stop it')
+    
 })
 
 
