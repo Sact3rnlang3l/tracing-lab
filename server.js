@@ -18,8 +18,13 @@ app.get("/", (req, res) => {
 try {
   nonExistentFunction()
 } catch (error) {
-  rollbar.info('Function does not exist')
+  rollbar.error('Function does not exist')
 }
+
+app.post('/api/button', ()=>{
+    rollbar.critical('Stop it')
+    return 'Stop it'
+})
 
 app.use(rollbar.errorHandler())
 

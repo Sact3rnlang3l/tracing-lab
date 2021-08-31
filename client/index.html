@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Hi</h1>
+    <div class="button">
+        <button>Don't press me</button>
+    </div>
+    <script>
+        const buuton = document.querySelector('button')
+        const press_count = 0
+
+        function do_not_press(e){
+            e.preventDefault()
+            axios.post('/api/button', buuton).then(res=>{
+                press_count = press_count += 1
+                console.log(res)
+            })
+        }
+    </script>
 </body>
 </html>
