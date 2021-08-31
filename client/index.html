@@ -19,14 +19,7 @@
         function do_not_press(e){
             e.preventDefault()
             axios.post('/api/button', buuton).then(res =>{
-                if (press_count === 0){
-                press_count = press_count += 1
-                console.log(res,press_count)
-                } else if(press_count === 1){
-                press_count = press_count += 1
-                } else {
-                document.createElement('popup')
-                }
+
             })
         }
         buuton.addEventListener('click', do_not_press)
