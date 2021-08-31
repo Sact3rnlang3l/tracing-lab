@@ -13,7 +13,7 @@
         <button>Don't press me</button>
     </div>
     <script>
-        const buuton = document.querySelector('button')
+        const buuton = document.getElementsByClassName('button')
         const press_count = 0
 
         function do_not_press(e){
@@ -23,6 +23,7 @@
                 console.log(res)
             })
         }
+        buuton.addEventListener('submit', do_not_press)
     </script>
 </body>
 </html>
